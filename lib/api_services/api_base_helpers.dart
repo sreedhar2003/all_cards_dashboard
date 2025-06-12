@@ -4,9 +4,17 @@ import 'package:http/http.dart' as http;
 
 class ApiBaseHelper {
   final String baseUrl = "https://qa-api.habbiton.com/v1/";
+  final String token =
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcl90eXBlIjo1LCJpYXQiOjE3NDk3MTAwODUsImV4cCI6MTc0OTc5NjQ4NX0.DZUhgn5Itzb1mD_wqLX5Atc4vDSTBdubQutJr2807z0";
 
   Future<dynamic> get(String url) async {
-    final response = await http.get(Uri.parse(baseUrl + url));
+    final response = await http.get(
+      Uri.parse(baseUrl + url),
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer $token",
+      },
+    );
     return _processResponse(response);
   }
 

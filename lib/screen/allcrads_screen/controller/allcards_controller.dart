@@ -15,12 +15,18 @@ class AllcardsController with ChangeNotifier {
 
       final result = await _repository.getAllCards();
       cards = result.data;
+      print("Fetched ${cards.length} cards");
     } catch (e) {
-      print("Error: $e");
+      print("Error fetching cards: ${e.toString()}");
     } finally {
       isLoading = false;
       notifyListeners();
     }
+  }
+
+  @override
+  String toString() {
+    return 'AllcardsController(isLoading: $isLoading, cardsCount: ${cards.length})';
   }
 
   List<Map<String, dynamic>> itemslist = [
