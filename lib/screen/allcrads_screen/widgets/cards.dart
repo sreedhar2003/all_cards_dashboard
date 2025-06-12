@@ -48,20 +48,20 @@ class Cards extends StatelessWidget {
           children: [
             Row(
               children: [
-                // Image.asset(
-                //   height: 24,
-                //   width: 24,
-                //   titleimage,
-                //   fit: BoxFit.cover,
-                // ),
-                Image.network(
-                  titleimage,
+                Image.asset(
                   height: 24,
                   width: 24,
+                  titleimage,
                   fit: BoxFit.cover,
-                  errorBuilder: (context, error, stackTrace) =>
-                      Icon(Icons.broken_image),
                 ),
+                // Image.network(
+                //   titleimage,
+                //   height: 24,
+                //   width: 24,
+                //   fit: BoxFit.cover,
+                //   errorBuilder: (context, error, stackTrace) =>
+                //       Icon(Icons.broken_image),
+                // ),
                 sizedBoxWithWidth(5),
                 Text(
                   title,
@@ -249,5 +249,3 @@ class Cards extends StatelessWidget {
     );
   }
 }
-
-
