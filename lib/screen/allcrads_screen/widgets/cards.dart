@@ -84,10 +84,13 @@ class Cards extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
               const Spacer(),
-              const CircleAvatar(
-                radius: 20,
-                backgroundColor: AppColors.titlecolor,
-                child: Center(child: Icon(Icons.add, color: AppColors.white)),
+              InkWell(
+                onTap: () {},
+                child: const CircleAvatar(
+                  radius: 20,
+                  backgroundColor: AppColors.titlecolor,
+                  child: Center(child: Icon(Icons.add, color: AppColors.white)),
+                ),
               ),
             ],
           ),
